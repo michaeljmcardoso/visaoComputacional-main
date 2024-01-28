@@ -36,7 +36,7 @@ while True:
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
 
             # Exibir a mensagem "Rosto Detectado" com o número do rosto
-            mensagem = f"Rosto Detectado {contadorDeRostos}"
+            mensagem = f"Rosto detectado {contadorDeRostos}"
             cv2.putText(frame, mensagem, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
         # Exibir o quadro resultante
