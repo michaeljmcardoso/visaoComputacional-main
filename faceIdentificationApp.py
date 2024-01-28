@@ -26,9 +26,6 @@ while True:
         # Encontrar todas os rostos no quadro
         face_locations = face_recognition.face_locations(frame)
 
-        # Resetar o contador de rostos para o novo frame, garantindo que o programa conte apenas os rostos presentes no quadro atual
-        contador_rostos = 0
-
         # Iterar sobre os rostos detectados
         for face_location in face_locations:
             # Incrementar o contador de rostos
