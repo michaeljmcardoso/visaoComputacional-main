@@ -14,9 +14,6 @@ nomeDaJanela = "Detecção de Rosto"
 # Criar a janela de exibição
 cv2.namedWindow(nomeDaJanela, cv2.WINDOW_NORMAL)
 
-# Inicializar o contador de rostos
-contadorDeRostos =  0
-
 # Loop Principal
 while True:
     # Ler um quadro do vídeo
@@ -28,15 +25,12 @@ while True:
 
         # Iterar sobre os rostos detectados
         for face_location in face_locations:
-            # Incrementar o contador de rostos
-            contadorDeRostos += 1
-
             # Desenhar um retângulo ao redor do rosto
             top, right, bottom, left = face_location
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
 
             # Exibir a mensagem "Rosto Detectado" com o número do rosto
-            mensagem = f"Rosto detectado {contadorDeRostos}"
+            mensagem = f"Rosto detectado"
             cv2.putText(frame, mensagem, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
         # Exibir o quadro resultante
@@ -45,7 +39,7 @@ while True:
     except Exception as e:
         print(f"Erro: {e}")
 
-    # Encerrar o programa ao pressionar a tecla 's'
+    # Encerrar o programa ao pressionar a tecla 's' de sair
     if cv2.waitKey(1) & 0xFF == ord('s'):
         break
 
