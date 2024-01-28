@@ -6,8 +6,8 @@ from playsound import playsound
 cap = cv2.VideoCapture(0)
 
 # Reduzir a resolução da imagem para melhorar o desempenho
-cap.set(3, 340)  # Largura
-cap.set(4, 280)  # Altura
+cap.set(3, 440)  # Largura
+cap.set(4, 380)  # Altura
 
 # Loop Principal
 while True:
@@ -33,8 +33,8 @@ while True:
             diff_y = eye_avg_y - mouth_avg_y
 
             # Identificação da Expressão Facial
-            threshold_happy = -115
-            threshold_sad = -95
+            threshold_happy = 100
+            threshold_sad = -100
 
             if diff_y < threshold_happy:
                 emotion = "Feliz"
